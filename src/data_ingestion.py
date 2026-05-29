@@ -3,8 +3,19 @@ import numpy as np
 import pandas as pd
 from dotenv import load_dotenv
 import os
+import logging
 
 load_dotenv()
+logger = logging.getLogger("DataIngestion")
+os.makedirs("logs", exist_ok=True)
+file_handler = logging.FileHandler(os.path.join("logs", "ingestion.logs"))
+stream_handler = logging.StreamHandler()
+detailed_log = logging.Formatter('%(asctime)s - %(name)s - %(message)s')
+file_handler.setFormatter(detailed_log)
+stream_handler.setFormatter(detailed_log)
+logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
+logger.info("Starting the ingestion part.")
 
 class DataIngestion():
     def __init__(self, db_name: str, collection_name:str):
