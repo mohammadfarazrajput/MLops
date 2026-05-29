@@ -1,6 +1,0 @@
-2026-05-30 01:30:13,104 - DataIngestion - Connection Established
-2026-05-30 01:30:14,818 - DataIngestion - Databases: ['sample_mflix', 'admin', 'local']
-2026-05-30 01:30:14,820 - DataIngestion - DB: 'sample_mflix' | Collection: 'movies'
-2026-05-30 01:30:15,230 - DataIngestion - Count: 21349
-2026-05-30 01:30:15,383 - DataIngestion - Extracted 5entries from movies
-2026-05-30 01:30:15,541 - DataIngestion - Connection Closed
