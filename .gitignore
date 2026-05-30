@@ -9,7 +9,7 @@ logs/
 .env
 # C extensions
 *.so
-mlflow.db
+mlflow.db   
 mlruns/
 mlflow/
 .dvc

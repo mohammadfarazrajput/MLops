@@ -6,12 +6,21 @@ from sklearn.metrics import  accuracy_score, f1_score
 from sklearn.preprocessing import LabelEncoder
 import logging
 import pandas as pd
+import dagshub
+import os
+from dotenv import load_dotenv
+load_dotenv()
 logger = logging.getLogger("ModelTrainer")
 
 class ModelTrainer():
     def __init__(self, experiment_name):
         self.experiment = experiment_name
-        mlflow.set_tracking_uri("sqlite:///mlflow.db")
+        #mlflow.set_tracking_uri("sqlite:///mlflow.db")
+        os.environ["MLFLOW_TRACKING_USERNAME"] = os.getenv("DAGSHUB_USERNAME")
+        os.environ["MLFLOW_TRACKING_PASSWORD"] = os.getenv("DAGSHUB_TOKEN")
+        
+        mlflow.set_tracking_uri("https://dagshub.com/farazrajput112/MLops.mlflow")
+        #dagshub.init(repo_owner='farazrajput112', repo_name='MLops', mlflow=True)
         mlflow.set_experiment(self.experiment)
         logger.info(f"Experiment: Model Training Started")
     def train(self, df:pd.DataFrame, params: dict):
