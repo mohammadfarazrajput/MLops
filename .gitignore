@@ -1,11 +1,20 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
+data/
+config/
+logs/
+*.logs
 *$py.class
 .env
 # C extensions
 *.so
-
+mlflow.db
+mlruns/
+mlflow/
+.dvc
+.dvc/cache
+.dvc/tmp
 # Distribution / packaging
 .Python
 build/
