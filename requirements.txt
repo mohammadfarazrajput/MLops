@@ -1,3 +1,5 @@
 pymongo 
 python-dotenv
 dagshub
+fastapi 
+uvicorn
